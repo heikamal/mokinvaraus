@@ -1,0 +1,9 @@
+.vscode
+
+Db/data
+Db/log
+Db/secrets
+
+server/.env
+
+app/node_modules

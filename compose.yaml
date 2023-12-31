@@ -1,0 +1,28 @@
+version: '1'
+
+services:
+  server:
+    build: ./server
+    ports:
+      - 8080:8080
+    links:
+      - db
+    depends_on:
+      db:
+        condition: service_healthy
+  db:
+    build: ./Db
+    user: root
+    ports:
+      - 1433:1433
+    volumes:
+      - ./Db/data:/var/opt/mssql/data
+      - ./Db/log:/var/opt/mssql/log
+      - ./Db/secrets:/var/opt/mssql/secrets
+    healthcheck:
+      test: /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "password123!" -Q "USE cabindb" -b -o /dev/null
+      interval: 10s
+      timeout: 10s
+      retries: 30
+      start_period: 180s
+      
