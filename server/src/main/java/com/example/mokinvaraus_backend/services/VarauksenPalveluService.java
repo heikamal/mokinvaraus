@@ -1,8 +1,6 @@
 package com.example.mokinvaraus_backend.services;
 
-import com.example.mokinvaraus_backend.models.Palvelu;
 import com.example.mokinvaraus_backend.models.VarauksenPalvelu;
-import com.example.mokinvaraus_backend.repositories.PalveluRepository;
 import com.example.mokinvaraus_backend.repositories.VarauksenPalveluRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +14,6 @@ public class VarauksenPalveluService {
 
     @Autowired
     private VarauksenPalveluRepository varauksenPalveluRepository;
-
-    @Autowired
-    private PalveluService palveluService;
 
     /**
      * Returns an iterable collection of all the reservation service entries in the repository.
