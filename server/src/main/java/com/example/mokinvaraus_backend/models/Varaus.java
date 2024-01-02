@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 
 import java.sql.Date;
 
+import java.util.Set;
+
 /**
  * Class for the Reservation Entities. All reservations are stored in an appropriate table in the database.
  */
@@ -54,6 +56,9 @@ public class Varaus {
      */
     @Column(name = "reservation_end")
     private Date reservationEndDate;
+
+    @OneToMany(mappedBy = "reservation")
+    Set<VarauksenPalvelu> services;
 
     /**
      * Creates a new empty Varaus object.

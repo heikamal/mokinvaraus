@@ -1,5 +1,7 @@
 package com.example.mokinvaraus_backend.models;
 
+import java.util.Set;
+
 import jakarta.persistence.*;
 
 /**
@@ -54,6 +56,9 @@ public class Palvelu {
      */
     @Column(name = "vat")
     private double tax;
+
+    @OneToMany(mappedBy = "service")
+    private Set<VarauksenPalvelu> reservations;
 
     /**
      * Creates a new empty Palvelu object.
