@@ -5,5 +5,6 @@ Db/log
 Db/secrets
 
 server/.env
+server/target
 
 app/node_modules
