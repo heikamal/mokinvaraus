@@ -27,12 +27,12 @@ ELSE
     );
     GO
 
--- INSERT INTO [post] (zip, city)
--- VALUES 
--- ('70200', 'Kuopio'),
--- ('00000', 'Tylypahka'),
--- ('73310', 'Tahkovuori'); 
--- GO
+    INSERT INTO [post] (zip, city)
+    VALUES 
+    ('70200', 'Kuopio'),
+    ('00000', 'Tylypahka'),
+    ('73310', 'Tahkovuori'); 
+    GO
 
 -- -----------------------------------------------------
 -- Table `cabindb`.`customer`
@@ -60,10 +60,10 @@ ELSE
         ON UPDATE NO ACTION)
     GO
 
--- INSERT INTO [customer] (zip, firstname, lastname, address, email, phone)
--- VALUES 
--- ('70200', 'Testi', 'Testinen', 'Testikuja 4', 'rofl@copter.lol', '0123456789');
--- GO
+    INSERT INTO [customer] (zip, firstname, lastname, address, email, phone)
+    VALUES 
+    ('70200', 'Testi', 'Testinen', 'Testikuja 4', 'rofl@copter.lol', '0123456789');
+    GO
 
 -- -----------------------------------------------------
 -- Table `cabindb`.`location`
@@ -79,11 +79,11 @@ ELSE
       INDEX location_name_index (name ASC));
     GO
 
--- INSERT INTO [location] (name)
--- VALUES 
--- ('Linnan Piha'),
--- ('Tahko');
--- GO
+    INSERT INTO [location] (name)
+    VALUES 
+    ('Linnan Piha'),
+    ('Tahko');
+    GO
 
 -- -----------------------------------------------------
 -- Table `cabindb`.`cabin`
@@ -117,10 +117,10 @@ ELSE
         ON UPDATE NO ACTION);
     GO
 
--- INSERT INTO [cabin] (location_id, zip, cabinname, cabinaddress, price, description, capacity, amenities)
--- VALUES 
--- ('1', '00000', 'Hagridin Mökki', 'Kielletty Metsä 1', 19.99, 'Harry, voisitko hakee mulle tulisiemeniä? Niitä sais harvinaisesta kasvista, joka kasvaa mettässä.', 3, 'Hagrid ja joo');
--- GO
+    INSERT INTO [cabin] (location_id, zip, cabinname, cabinaddress, price, description, capacity, amenities)
+    VALUES 
+    ('1', '00000', 'Hagridin Mökki', 'Kielletty Metsä 1', 19.99, 'Harry, voisitko hakee mulle tulisiemeniä? Niitä sais harvinaisesta kasvista, joka kasvaa mettässä.', 3, 'Hagrid ja joo');
+    GO
 
 -- -----------------------------------------------------
 -- Table `cabindb`.`reservation`
@@ -152,10 +152,10 @@ ELSE
         ON UPDATE NO ACTION);
     GO
 
--- INSERT INTO [reservation] (customer_id, cabin_id, reserved_date, confirmation_date, reservation_start, reservation_end)
--- VALUES 
--- ('1', '1', '2023-12-21 12:00:00', '2023-12-22 12:00:00', '2024-02-13 12:00:00', '2024-02-15 12:00:00');
--- GO
+    INSERT INTO [reservation] (customer_id, cabin_id, reserved_date, confirmation_date, reservation_start, reservation_end)
+    VALUES 
+    ('1', '1', '2023-12-21 12:00:00', '2023-12-22 12:00:00', '2024-02-13 12:00:00', '2024-02-15 12:00:00');
+    GO
 
 -- -----------------------------------------------------
 -- Table `cabindb`.`invoice`
@@ -176,9 +176,9 @@ ELSE
         ON DELETE NO ACTION);
     GO
 
--- INSERT INTO [invoice] (reservation_id, total, vat)
--- VALUES (1, 74.36, 14.39);
--- GO
+    INSERT INTO [invoice] (reservation_id, total, vat)
+    VALUES (1, 74.36, 14.39);
+    GO
 
 -- -----------------------------------------------------
 -- Table `cabindb`.`service`
@@ -205,9 +205,9 @@ ELSE
         ON UPDATE NO ACTION);
     GO
 
--- INSERT INTO [service] (location_id, name, type, description, price, vat)
--- VALUES (1, 'Lohikäärmeratsastus', 1, 'Ei ne pure', 16.12, 3.87);
--- GO
+    INSERT INTO [service] (location_id, name, type, description, price, vat)
+    VALUES (1, 'Lohikäärmeratsastus', 1, 'Ei ne pure', 16.12, 3.87);
+    GO
 
 -- -----------------------------------------------------
 -- Table `cabindb`.`reservation_services`
@@ -233,6 +233,6 @@ ELSE
         ON DELETE NO ACTION
         ON UPDATE NO ACTION)
 
--- INSERT INTO [reservation_services] (reservation_id, service_id, number)
--- VALUES (1, 1, 3);
--- GO
+    INSERT INTO [reservation_services] (reservation_id, service_id, number)
+    VALUES (1, 1, 3);
+    GO
