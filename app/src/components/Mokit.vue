@@ -7,7 +7,7 @@ export default {
   },
   methods: {
     async getData() {
-      const res = await fetch("http://localhost:8080/api/mokit");
+      const res = await fetch("http://localhost:8080/api/cabins");
       const finalRes = await res.json();
       this.listItems = finalRes;
       console.log(finalRes);
