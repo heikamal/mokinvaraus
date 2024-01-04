@@ -2,14 +2,14 @@
 export default {
   data() {
     return{
-      listItems: [],
+      object: {},
     }
   },
   methods: {
     async getData() {
       const res = await fetch("http://localhost:8080/api/cabins/"+ this.$route.params.id)
       const finalRes = await res.json();
-      this.listItems = finalRes;
+      this.object = finalRes;
       console.log(finalRes)
       console.log(this.$route.params.id)
     }
@@ -27,5 +27,15 @@ export default {
 </script>
 
 <template>
-  <h1>Pöö</h1>
+  <h1>{{ object.cabinName }}</h1>
+  <p>
+    Mökin id: {{ object.cabinId }}<br>
+    Alue: {{ object.areaId }}<br>
+    Osoite: {{ object.streetAddress }}<br>
+    Postiosoite: {{ object.postalCode }}<br>
+    Hinta: {{ object.price }}<br>
+    Kuvaus: {{ object.description }}<br>
+    Henkilömäärä: {{ object.personCount }}<br>
+    Varustelu: {{ object.equipment }}<br>
+  </p>
 </template>
