@@ -22,6 +22,6 @@ export default {
 <template>
   <h1>Tietokannassa olevat mökit:</h1>
   <div v-for="item in listItems" :key="item.cabinId">
-    {{item.cabinName}}
+    <router-link :to="'/cabins/' + item.cabinId">{{item.cabinName}}</router-link>
   </div>
 </template>
