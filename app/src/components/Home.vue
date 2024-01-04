@@ -4,6 +4,6 @@
 <template>
   <h1>Mökinvarausjärjestelmä</h1>
   <p>
-    <router-link to="/mokit">Mökit</router-link>
+    <router-link to="/cabins">Mökit</router-link>
   </p>
 </template>
