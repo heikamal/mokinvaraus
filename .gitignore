@@ -4,6 +4,7 @@ Db/data
 Db/log
 Db/secrets
 
+server/.idea
 server/.env
 server/target
 
