@@ -9,3 +9,4 @@ server/.env
 server/target
 
 app/node_modules
+app/.env
