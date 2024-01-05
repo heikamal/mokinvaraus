@@ -11,6 +11,7 @@ import MokkiForm from './components/cabins/MokkiForm.vue'
 import Alueet from './components/locations/Alueet.vue'
 import AlueForm from './components/locations/AlueForm.vue'
 import Postit from './components/postal/Postit.vue'
+import PostiForm from './components/postal/PostiForm.vue'
 
 const routes = [
   { path: '/', component: Home },
@@ -20,6 +21,7 @@ const routes = [
   { path: '/locations', component: Alueet },
   { path: '/locations/new', component: AlueForm },
   { path: '/postal', component: Postit },
+  { path: '/postal/new', component: PostiForm },
 ]
 
 const router = createRouter({

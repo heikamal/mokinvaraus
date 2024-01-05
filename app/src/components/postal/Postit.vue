@@ -25,5 +25,5 @@ export default {
   <div v-for="item in listItems" :key="item.postalCode">
     {{item.postalCode}}: {{item.city}}
   </div>
-  <router-link to="">Lisää uusi</router-link>
+  <router-link to="/postal/new">Lisää uusi</router-link>
 </template>
