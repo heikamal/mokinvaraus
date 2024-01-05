@@ -9,7 +9,7 @@ export default {
   methods: {
     async getData() {
       this.axios.get(url.concat(this.$route.params.id)).then((response) => {
-        console.log(response.data)
+        //console.log(response.data)
         this.object = response.data
       })
     }

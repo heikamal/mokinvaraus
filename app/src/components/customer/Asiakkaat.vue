@@ -9,7 +9,7 @@ export default {
   methods: {
     async getData() {
       this.axios.get(url).then((response) => {
-        console.log(response.data)
+        //console.log(response.data)
         this.listItems = response.data
       })
     }

@@ -23,7 +23,7 @@ export default {
 <template>
   <h1>Tietokannassa olevat mökit:</h1>
   <div v-for="item in listItems" :key="item.cabinId">
-    <router-link :to="'/cabins/' + item.cabinId">{{item.cabinName}}</router-link>
+    <router-link :to="'/cabins/'.concat(item.cabinId)">{{item.cabinName}}</router-link>
   </div>
   <router-link to="/cabins/new">Lisää uusi</router-link>
 </template>
