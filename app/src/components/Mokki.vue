@@ -8,11 +8,10 @@ export default {
   },
   methods: {
     async getData() {
-      const res = await fetch(url.concat(this.$route.params.id))
-      const finalRes = await res.json();
-      this.object = finalRes;
-      console.log(finalRes)
-      console.log(this.$route.params.id)
+      this.axios.get(url.concat(this.$route.params.id)).then((response) => {
+        //console.log(response.data)
+        this.object = response.data
+      })
     }
   },
   created() {

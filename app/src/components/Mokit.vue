@@ -8,10 +8,10 @@ export default {
   },
   methods: {
     async getData() {
-      const res = await fetch(url);
-      const finalRes = await res.json();
-      this.listItems = finalRes;
-      console.log(finalRes);
+      this.axios.get(url).then((response) => {
+        //console.log(response.data)
+        this.listItems = response.data
+      })
     }
   },
   mounted() {
