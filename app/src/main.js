@@ -8,14 +8,16 @@ import Home from './components/Home.vue'
 import Mokit from './components/cabins/Mokit.vue'
 import Mokki from './components/cabins/Mokki.vue'
 import MokkiForm from './components/cabins/MokkiForm.vue'
-import Alueet from './components/Alueet.vue'
+import Alueet from './components/locations/Alueet.vue'
+import Postit from './components/postal/Postit.vue'
 
 const routes = [
   { path: '/', component: Home },
   { path: '/cabins', component: Mokit },
   { path: '/cabins/:id', component: Mokki },
   { path: '/cabins/new', component: MokkiForm },
-  { path: '/locations', component: Alueet }
+  { path: '/locations', component: Alueet },
+  { path: '/postal', component: Postit },
 ]
 
 const router = createRouter({
