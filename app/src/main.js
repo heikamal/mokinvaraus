@@ -5,9 +5,9 @@ import VueAxios from 'vue-axios'
 import './style.css'
 import App from './App.vue'
 import Home from './components/Home.vue'
-import Mokit from './components/Mokit.vue'
-import Mokki from './components/Mokki.vue'
-import MokkiForm from './components/MokkiForm.vue'
+import Mokit from './components/cabins/Mokit.vue'
+import Mokki from './components/cabins/Mokki.vue'
+import MokkiForm from './components/cabins/MokkiForm.vue'
 import Alueet from './components/Alueet.vue'
 
 const routes = [
