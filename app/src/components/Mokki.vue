@@ -1,4 +1,5 @@
 <script>
+const url = import.meta.env.VITE_API_URL.concat("/cabins/");
 export default {
   data() {
     return{
@@ -7,7 +8,7 @@ export default {
   },
   methods: {
     async getData() {
-      const res = await fetch("http://localhost:8080/api/cabins/"+ this.$route.params.id)
+      const res = await fetch(url.concat(this.$route.params.id))
       const finalRes = await res.json();
       this.object = finalRes;
       console.log(finalRes)

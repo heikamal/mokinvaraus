@@ -1,4 +1,5 @@
 <script>
+const url = import.meta.env.VITE_API_URL.concat("/locations");
 export default {
   data() {
     return {
@@ -7,7 +8,7 @@ export default {
   },
   methods: {
     async getData() {
-      const res = await fetch("http://localhost:8080/api/locations");
+      const res = await fetch(url);
       const finalRes = await res.json();
       this.listItems = finalRes;
       console.log(finalRes);

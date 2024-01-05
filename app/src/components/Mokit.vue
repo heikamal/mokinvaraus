@@ -1,4 +1,5 @@
 <script>
+const url = import.meta.env.VITE_API_URL.concat("/cabins");
 export default {
   data() {
     return {
@@ -7,7 +8,7 @@ export default {
   },
   methods: {
     async getData() {
-      const res = await fetch(import.meta.env.VITE_API_URL.concat("/cabins"));
+      const res = await fetch(url);
       const finalRes = await res.json();
       this.listItems = finalRes;
       console.log(finalRes);
