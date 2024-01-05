@@ -1,5 +1,6 @@
 <script>
 import { toRaw } from 'vue'
+const url = import.meta.env.VITE_API_URL.concat("/cabins");
 export default {
   data() {
     return {
@@ -20,26 +21,10 @@ export default {
       if (event) {
         event.preventDefault()
       }
-      console.log(toRaw(this.form))
-      fetch('http://localhost:8080/api/cabins', {
-        method: 'POST',
-        mode: "cors",
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(this.form/*{
-          areaId: this.form.areaId,
-          postalCode: this.form.postalCode,
-          cabinName: this.form.cabinName,
-          streetAddress: this.form.streetAddress,
-          price: this.form.price,
-          description: this.form.description,
-          personCount: this.form.personCount,
-          equipment: this.form.equipment,
-        }*/)
+      this.axios.post(url, this.form).then((response) => {
+        console.log(response.data)
+        this.$router.push("/cabins/".concat(response.data.cabinId))
       })
-      .then(response => response.json())
-      .then(data => console.log(data))
     }
   }
 }
