@@ -16,10 +16,9 @@ export default {
         event.preventDefault()
       }
       this.axios.post(url, this.form).then((response) => {
-        console.log(response.data)
+        //console.log(response.data)
         this.$router.push("/invoices")
       })
-      console.log(this.form)
     }
   }
 }
