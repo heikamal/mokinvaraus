@@ -21,9 +21,9 @@ export default {
 </script>
 
 <template>
-  <h1>Tietokannassa olevat mökit:</h1>
+  <h1>Tietokannassa olevat asiakkaat:</h1>
   <div v-for="item in listItems" :key="item.customerId">
-    <router-link :to="'/customers/'.concat(item.customerId)">{{ item.firstName }}  {{ item.lastName }}</router-link>
+    <router-link :to="'/customers/'.concat(item.customerId)">{{ item.customerId }} : {{ item.firstName }}  {{ item.lastName }}</router-link>
   </div>
-  <router-link to="">Lisää uusi</router-link>
+  <router-link to="/customers/new">Lisää uusi</router-link>
 </template>
