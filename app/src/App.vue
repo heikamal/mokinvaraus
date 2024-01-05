@@ -7,6 +7,7 @@
     <router-link to="/cabins">Mökit</router-link>
     <router-link to="/locations">Alueet</router-link>
     <router-link to="/postal">Postinumerot</router-link>
+    <router-link to="/customers">Asiakkaat</router-link>
   </section>
   <router-view></router-view>
 </template>

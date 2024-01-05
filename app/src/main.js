@@ -12,6 +12,8 @@ import Alueet from './components/locations/Alueet.vue'
 import AlueForm from './components/locations/AlueForm.vue'
 import Postit from './components/postal/Postit.vue'
 import PostiForm from './components/postal/PostiForm.vue'
+import Asiakkaat from './components/customer/Asiakkaat.vue'
+import Asiakas from './components/customer/Asiakas.vue'
 
 const routes = [
   { path: '/', component: Home },
@@ -22,6 +24,8 @@ const routes = [
   { path: '/locations/new', component: AlueForm },
   { path: '/postal', component: Postit },
   { path: '/postal/new', component: PostiForm },
+  { path: '/customers', component: Asiakkaat },
+  { path: '/customers/:id', component: Asiakas }
 ]
 
 const router = createRouter({
