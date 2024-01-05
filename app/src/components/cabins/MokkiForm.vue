@@ -1,5 +1,4 @@
 <script>
-import { toRaw } from 'vue'
 const url = import.meta.env.VITE_API_URL.concat("/cabins");
 export default {
   data() {
