@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 /**
  * Controller class for cabin data. Contains endpoint for fetching, creating, updating and deleting.
  */
-@CrossOrigin
 @RestController
 @RequestMapping(path = "/api/cabins")
 public class MokkiController {
