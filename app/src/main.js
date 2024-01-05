@@ -15,6 +15,8 @@ import PostiForm from './components/postal/PostiForm.vue'
 import Asiakkaat from './components/customer/Asiakkaat.vue'
 import Asiakas from './components/customer/Asiakas.vue'
 import AsiakasForm from './components/customer/AsiakasForm.vue'
+import Laskut from './components/invoices/Laskut.vue'
+import LaskuForm from './components/invoices/LaskuForm.vue'
 
 const routes = [
   { path: '/', component: Home },
@@ -28,6 +30,8 @@ const routes = [
   { path: '/customers', component: Asiakkaat },
   { path: '/customers/:id', component: Asiakas },
   { path: '/customers/new', component: AsiakasForm },
+  { path: '/invoices', component: Laskut },
+  { path: '/invoices/new', component: LaskuForm},
 ]
 
 const router = createRouter({
