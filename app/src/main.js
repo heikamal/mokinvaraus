@@ -17,6 +17,7 @@ import Asiakas from './components/customer/Asiakas.vue'
 import AsiakasForm from './components/customer/AsiakasForm.vue'
 import Laskut from './components/invoices/Laskut.vue'
 import LaskuForm from './components/invoices/LaskuForm.vue'
+import Varaukset from './components/reservations/Varaukset.vue'
 
 const routes = [
   { path: '/', component: Home },
@@ -31,7 +32,8 @@ const routes = [
   { path: '/customers/:id', component: Asiakas },
   { path: '/customers/new', component: AsiakasForm },
   { path: '/invoices', component: Laskut },
-  { path: '/invoices/new', component: LaskuForm},
+  { path: '/invoices/new', component: LaskuForm },
+  { path: '/reservations', component: Varaukset },
 ]
 
 const router = createRouter({
