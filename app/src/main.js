@@ -9,6 +9,7 @@ import Mokit from './components/cabins/Mokit.vue'
 import Mokki from './components/cabins/Mokki.vue'
 import MokkiForm from './components/cabins/MokkiForm.vue'
 import Alueet from './components/locations/Alueet.vue'
+import AlueForm from './components/locations/AlueForm.vue'
 import Postit from './components/postal/Postit.vue'
 
 const routes = [
@@ -17,6 +18,7 @@ const routes = [
   { path: '/cabins/:id', component: Mokki },
   { path: '/cabins/new', component: MokkiForm },
   { path: '/locations', component: Alueet },
+  { path: '/locations/new', component: AlueForm },
   { path: '/postal', component: Postit },
 ]
 

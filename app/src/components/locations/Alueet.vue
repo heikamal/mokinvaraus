@@ -25,5 +25,5 @@ export default {
   <div v-for="item in listItems" :key="item.areaId">
     {{item.areaId}}: {{item.name}}
   </div>
-  <router-link to="">Lisää uusi</router-link>
+  <router-link to="/locations/new">Lisää uusi</router-link>
 </template>
