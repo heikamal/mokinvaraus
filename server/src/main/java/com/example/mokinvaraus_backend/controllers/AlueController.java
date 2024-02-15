@@ -6,6 +6,7 @@ import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -38,7 +39,7 @@ public class AlueController {
      * message if the parameters are invalid.
      */
     @PostMapping(path = "")
-    public ResponseEntity<?> addNewAlue(@RequestBody Alue alue){
+    public ResponseEntity<?> addNewAlue(@NonNull @RequestBody Alue alue){
         Alue response = null;
         try {
             response = alueService.saveAlue(alue);

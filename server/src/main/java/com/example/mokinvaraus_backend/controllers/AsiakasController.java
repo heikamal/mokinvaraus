@@ -6,6 +6,7 @@ import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -36,7 +37,7 @@ public class AsiakasController {
      * @return A ResponseEntity with HTTP status of the operation and either the added entity or an error.
      */
     @PostMapping(path = "")
-    public ResponseEntity<?> addNewAsiakas(@RequestBody Asiakas asiakas) {
+    public ResponseEntity<?> addNewAsiakas(@NonNull @RequestBody Asiakas asiakas) {
         Asiakas response = null;
         try {
             response = asiakasService.saveAsiakas(asiakas);

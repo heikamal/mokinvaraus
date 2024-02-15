@@ -4,6 +4,7 @@ import com.example.mokinvaraus_backend.models.Asiakas;
 import com.example.mokinvaraus_backend.repositories.AsiakasRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 
 /**
@@ -32,7 +33,7 @@ public class AsiakasService {
      * @return the saved Asiakas object.
      * @throws IllegalArgumentException if the parameter object's fields are missing or invalid
      */
-    public Asiakas saveAsiakas(Asiakas asiakas) {
+    public Asiakas saveAsiakas(@NonNull Asiakas asiakas) {
         try {
             return asiakasRepository.save(asiakas);
         } catch (IllegalArgumentException e) {
@@ -45,7 +46,7 @@ public class AsiakasService {
      * @param id - the ID of the customer to find.
      * @return the found customer data in Asiakas object.
      */
-    public Asiakas findAsiakas(Integer id){
+    public Asiakas findAsiakas(@NonNull Integer id){
         Asiakas asiakas = asiakasRepository.findById(id).orElse(null);
         if(asiakas == null){
             throw new EntityNotFoundException("No such customer!");
@@ -57,7 +58,7 @@ public class AsiakasService {
      * Deletes the given customer from the database.
      * @param id - the ID of the customer to delete.
      */
-    public void removeAsiakas(Integer id){
+    public void removeAsiakas(@NonNull Integer id){
         asiakasRepository.deleteById(id);
     }
 }

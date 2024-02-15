@@ -2,6 +2,8 @@ package com.example.mokinvaraus_backend.services;
 
 import com.example.mokinvaraus_backend.models.Alue;
 import com.example.mokinvaraus_backend.repositories.AlueRepository;
+
+import org.springframework.lang.NonNull;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,7 +35,7 @@ public class AlueService {
      * @return       the created Alue object
      * @throws IllegalArgumentException if the parameter object is missing parameters.
      */
-    public Alue saveAlue(Alue alue){
+    public Alue saveAlue(@NonNull Alue alue){
         try {
             return alueRepository.save(alue);
         } catch (IllegalArgumentException e) {
@@ -46,7 +48,7 @@ public class AlueService {
      * @param id - ID in the database in Integer instance.
      * @return Alue (Area) entity corresponding to the id.
      */
-    public Alue findAlue(Integer id){
+    public Alue findAlue(@NonNull Integer id){
         Alue alue = alueRepository.findById(id).orElse(null);
         if (alue == null){
             throw new EntityNotFoundException("No such area!");
@@ -58,7 +60,7 @@ public class AlueService {
      * Removes a single area entry from the database.
      * @param id - Area's ID in the database.
      */
-    public void removeAlue(Integer id){
+    public void removeAlue(@NonNull Integer id){
         alueRepository.deleteById(id);
     }
 

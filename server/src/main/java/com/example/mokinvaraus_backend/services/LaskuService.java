@@ -4,6 +4,7 @@ import com.example.mokinvaraus_backend.models.Lasku;
 import com.example.mokinvaraus_backend.repositories.LaskuRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 
 /**
@@ -32,7 +33,7 @@ public class LaskuService {
      * @return the saved Lasku object.
      * @throws IllegalArgumentException if the parameter object's fields are missing or invalid
      */
-    public Lasku saveLasku(Lasku lasku){
+    public Lasku saveLasku(@NonNull Lasku lasku){
         try {
             return laskuRepository.save(lasku);
         } catch (IllegalArgumentException e) {
@@ -45,7 +46,7 @@ public class LaskuService {
      * @param id The ID of the invoice to find.
      * @return the found invoice data in Lasku object.
      */
-    public Lasku findLasku(Integer id){
+    public Lasku findLasku(@NonNull Integer id){
         Lasku lasku = laskuRepository.findById(id).orElse(null);
         if(lasku == null){
             throw new EntityNotFoundException("No such invoice!");
@@ -57,7 +58,7 @@ public class LaskuService {
      * Deletes the given invoice from the database.
      * @param id The ID of the invoice to delete.
      */
-    public void removeLasku(Integer id){
+    public void removeLasku(@NonNull Integer id){
         laskuRepository.deleteById(id);
     }
 }
