@@ -4,6 +4,7 @@ import com.example.mokinvaraus_backend.models.Palvelu;
 import com.example.mokinvaraus_backend.repositories.PalveluRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 
 /**
@@ -32,7 +33,7 @@ public class PalveluService {
      * @return the saved Palvelu object.
      * @throws IllegalArgumentException If the parameter object's fields are missing or invalid
      */
-    public Palvelu savePalvelu(Palvelu palvelu){
+    public Palvelu savePalvelu(@NonNull Palvelu palvelu){
         try {
             return palveluRepository.save(palvelu);
         } catch (IllegalArgumentException e) {
@@ -46,7 +47,7 @@ public class PalveluService {
      * @return The found service data in Palvelu object.
      * @throws EntityNotFoundException If the service is not found
      */
-    public Palvelu findPalvelu(Integer id){
+    public Palvelu findPalvelu(@NonNull Integer id){
         Palvelu palvelu = palveluRepository.findById(id).orElse(null);
         if(palvelu == null){
             throw new EntityNotFoundException("No such service!");
@@ -58,7 +59,7 @@ public class PalveluService {
      * Removes the given service from the database.
      * @param id The ID of the service to remove.
      */
-    public void removePalvelu(Integer id){
+    public void removePalvelu(@NonNull Integer id){
         palveluRepository.deleteById(id);
     }
 }

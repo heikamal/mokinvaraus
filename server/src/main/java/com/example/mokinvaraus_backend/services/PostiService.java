@@ -4,6 +4,7 @@ import com.example.mokinvaraus_backend.models.Posti;
 import com.example.mokinvaraus_backend.repositories.PostiRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 
 /**
@@ -33,7 +34,7 @@ public class PostiService {
      * @return        the created Posti object
      * @throws IllegalArgumentException if the given object is missing parameters.
      */
-    public Posti savePosti(Posti posti){
+    public Posti savePosti(@NonNull Posti posti){
         try {
             return postiRepository.save(posti);
         } catch (IllegalArgumentException e) {
@@ -47,7 +48,7 @@ public class PostiService {
      * @param  id  the id of the Posti object to find
      * @return     the found Posti object, or null if not found
      */
-    public Posti findPosti(String id){
+    public Posti findPosti(@NonNull String id){
         Posti posti = postiRepository.findById(id).orElse(null);
         if (posti == null){
             throw new EntityNotFoundException("No such postal code!");
@@ -60,7 +61,7 @@ public class PostiService {
      *
      * @param  id  the ID of the post to be removed.
      */
-    public void removePosti(String id){
+    public void removePosti(@NonNull String id){
         postiRepository.deleteById(id);
     }
 

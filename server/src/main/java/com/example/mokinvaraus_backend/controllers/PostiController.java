@@ -3,9 +3,13 @@ package com.example.mokinvaraus_backend.controllers;
 import com.example.mokinvaraus_backend.models.Posti;
 import com.example.mokinvaraus_backend.services.PostiService;
 import jakarta.persistence.EntityNotFoundException;
+
+import java.util.Objects;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -36,7 +40,7 @@ public class PostiController {
      * @return A ResponseEntity containing the added Posti object.
      */
     @PostMapping(path = "")
-    public ResponseEntity<?> addNewPosti(@RequestBody Posti posti){
+    public ResponseEntity<?> addNewPosti(@NonNull @RequestBody Posti posti){
         Posti response = null;
         try{
             response = postiService.savePosti(posti);
@@ -55,7 +59,8 @@ public class PostiController {
     public ResponseEntity<?> getPosti(@PathVariable(value = "id") String id){
         Posti response = null;
         try {
-            response = postiService.findPosti(String.valueOf(id));
+            response = postiService.findPosti(Objects.toString(id));
+            
         } catch (EntityNotFoundException e){
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         }

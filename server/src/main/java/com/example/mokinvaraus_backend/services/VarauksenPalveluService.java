@@ -4,6 +4,7 @@ import com.example.mokinvaraus_backend.models.VarauksenPalvelu;
 import com.example.mokinvaraus_backend.repositories.VarauksenPalveluRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 
 /**
@@ -27,7 +28,7 @@ public class VarauksenPalveluService {
      * Adds the given VarauksenPalvelu object to the database with the save-operation.
      * @param  varauksenPalvelu  the VarauksenPalvelu object to be saved
      */
-    public VarauksenPalvelu saveVarauksenPalvelu(VarauksenPalvelu varauksenPalvelu){
+    public VarauksenPalvelu saveVarauksenPalvelu(@NonNull VarauksenPalvelu varauksenPalvelu){
         return varauksenPalveluRepository.save(varauksenPalvelu);
     }
 
@@ -37,7 +38,7 @@ public class VarauksenPalveluService {
      * @return the found reservation data in VarauksenPalvelu object
      * @throws EntityNotFoundException If the reservation is not found.
      */
-    public VarauksenPalvelu findVarauksenPalvelu(Integer id){
+    public VarauksenPalvelu findVarauksenPalvelu(@NonNull Integer id){
         VarauksenPalvelu varauksenPalvelu = varauksenPalveluRepository.findById(id).orElse(null);
         if(varauksenPalvelu == null){
             throw new EntityNotFoundException("No such reservation!");
@@ -48,7 +49,7 @@ public class VarauksenPalveluService {
     /**
      * Removes the given reservation's service entry from the database.
      */
-    public void removeVarauksenPalvelu(Integer id){
+    public void removeVarauksenPalvelu(@NonNull Integer id){
         varauksenPalveluRepository.deleteById(id);
     }
 

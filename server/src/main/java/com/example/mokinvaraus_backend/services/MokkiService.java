@@ -5,6 +5,7 @@ import com.example.mokinvaraus_backend.repositories.MokkiRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 
 /**
@@ -30,7 +31,7 @@ public class MokkiService {
      * @return        the saved Mokki object
      * @throws IllegalArgumentException if the parameter object's fields are missing or invalid
      */
-    public Mokki saveMokki(Mokki mokki){
+    public Mokki saveMokki(@NonNull Mokki mokki){
         try {
             return mokkiRepository.save(mokki);
         } catch (IllegalArgumentException e) {
@@ -47,7 +48,7 @@ public class MokkiService {
      * @return    the found Mokki object
      * @throws EntityNotFoundException if there is no cabin with the given ID
      */
-    public Mokki findMokki(Integer id){
+    public Mokki findMokki(@NonNull Integer id){
         Mokki mokki = mokkiRepository.findById(id).orElse(null);
         if (mokki == null){
             throw new EntityNotFoundException("No such cabin!");
@@ -60,7 +61,7 @@ public class MokkiService {
      *
      * @param  id  the ID of the mokki to be removed
      */
-    public void removeMokki(Integer id){
+    public void removeMokki(@NonNull Integer id){
         mokkiRepository.deleteById(id);
     }
 }

@@ -17,6 +17,7 @@ public class MokinvarausBackendApplication {
 
 	@Bean
 	public WebMvcConfigurer corsConfigurer() {
+		//TODO: tälle parempi ratkaisu
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(@NonNull CorsRegistry registry) {

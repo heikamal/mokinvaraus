@@ -6,6 +6,7 @@ import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -32,7 +33,7 @@ public class PalveluController {
      * @return A ResponseEntity with HTTP status of the operation and either the added entity or an error.
      */
     @PostMapping(path = "")
-    public ResponseEntity<?> addNewPalvelu(@RequestBody Palvelu palvelu){
+    public ResponseEntity<?> addNewPalvelu(@NonNull @RequestBody Palvelu palvelu){
         Palvelu response = null;
         try {
             response = palveluService.savePalvelu(palvelu);
